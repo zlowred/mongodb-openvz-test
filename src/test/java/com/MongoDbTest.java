@@ -31,8 +31,10 @@ public class MongoDbTest {
                 sb.append(UUID.randomUUID().toString());
             }
             doc.setContent(sb.toString());
+            String uuid = UUID.randomUUID().toString();
+            doc.setUuid(uuid);
             mongo.save(doc);
-            mongo.find(Query.query(Criteria.where("content").is(sb.toString())), Doc.class);
+            mongo.find(Query.query(Criteria.where("uuid").is(uuid)), Doc.class);
             if (++counter % 1000 == 0) {
                 System.out.println(counter);
             }

@@ -7,9 +7,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Doc {
     @Indexed
     private String content;
+    @Indexed
+    private String uuid;
 
-    public String getContent() {
-        return content;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public void setContent(String content) {
