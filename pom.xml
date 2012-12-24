@@ -11,7 +11,7 @@
     <properties>
         <springVersion>3.1.2.RELEASE</springVersion>
         <springDataVersion>1.0.4.RELEASE</springDataVersion>
-        <javaVersion>1.7</javaVersion>
+        <javaVersion>1.6</javaVersion>
         <slf4jVersion>1.6.3</slf4jVersion>
         <log4jVersion>1.2.16</log4jVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
