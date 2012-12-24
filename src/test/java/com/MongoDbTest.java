@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -30,6 +32,7 @@ public class MongoDbTest {
             }
             doc.setContent(sb.toString());
             mongo.save(doc);
+            mongo.find(Query.query(Criteria.where("content").is(sb.toString())), Doc.class);
             if (++counter % 1000 == 0) {
                 System.out.println(counter);
             }

@@ -1,2 +1,10 @@
-ssh root@<vds_node>
-yum install java-1.7.0-openjdk-devel git
+ssh root@<vds node ip>
+yum install java-1.6.0-openjdk-devel git
+wget http://mirror.switch.ch/mirror/apache/dist/maven/maven-3/3.0.4/binaries/apache-maven-3.0.4-bin.tar.gz
+tar -xvzf apache-maven-3.0.4-bin.tar.gz
+export M2_HOME=/root/apache-maven-3.0.4
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+git clone git://github.com/zlowred/mongodb-openvz-test.git test
+cd test
+mvn test -Dlogin=admin -Dpassword=<mongodb admin password> -Dhost=<mongodb host external ip> -Ddb=test
